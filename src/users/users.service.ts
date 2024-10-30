@@ -25,6 +25,12 @@ export class UsersService {
     return this.userModel.findById(id);
   }
 
+  // Novo método para buscar pelo email
+  async findOneByEmail(email: string): Promise<User | null> {
+    //console.log(`Procurando usuário com email: ${email}`);
+    return this.userModel.findOne({ email }).exec();
+  }
+
   update(id: string, updateUserDto: UpdateUserDto) {
     return this.userModel.findByIdAndUpdate(
       {
