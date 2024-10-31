@@ -9,6 +9,9 @@ export class User {
   name: string;
 
   @Prop()
+  empresa: string;
+
+  @Prop()
   email: string;
 
   @Prop()

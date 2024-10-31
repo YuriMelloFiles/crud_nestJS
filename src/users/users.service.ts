@@ -14,7 +14,7 @@ export class UsersService {
 
   create(createUserDto: CreateUserDto) {
     const user = new this.userModel(createUserDto);
-    console.log(user.email)
+    console.log(user.empresa)
     return user.save();
   }
 
