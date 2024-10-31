@@ -4,6 +4,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { User, UserDocument } from './entities/user.entity';
+import { ReturnUserDto } from './dto/return-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -26,7 +27,7 @@ export class UsersService {
   }
 
   // Novo método para buscar pelo email
-  async findOneByEmail(email: string): Promise<User | null> {
+  async findOneByEmail(email: string): Promise<ReturnUserDto | null> {
     //console.log(`Procurando usuário com email: ${email}`);
     return this.userModel.findOne({ email }).exec();
   }
